@@ -1,0 +1,55 @@
+# Jogo-bonsai
+Sem descrição
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo do Bonsai</title>
+  <style>
+    body {
+      background: #1a1a1a;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      margin: 20px 0;
+    }
+    #bonsai-container {
+      display: grid;
+      grid-template-columns: repeat(6, 64px);
+      grid-gap: 10px;
+      justify-content: center;
+    }
+    .sprite {
+      width: 64px;
+      height: 64px;
+      background-image: url("assets/bonsai.png"); /* coloque sua imagem dentro da pasta assets */
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌱 Jogo do Bonsai</h1>
+  <div id="bonsai-container"></div>
+
+  <script>
+    // Configurações do sprite
+    const bonsaiContainer = document.getElementById("bonsai-container");
+    const SPRITE_WIDTH = 64;   // largura de cada quadrado
+    const SPRITE_HEIGHT = 64;  // altura de cada quadrado
+    const COLUNAS = 6;
+    const LINHAS = 5;
+
+    for (let linha = 0; linha < LINHAS; linha++) {
+      for (let col = 0; col < COLUNAS; col++) {
+        const sprite = document.createElement("div");
+        sprite.classList.add("sprite");
+        sprite.style.backgroundPosition = `-${col * SPRITE_WIDTH}px -${linha * SPRITE_HEIGHT}px`;
+        bonsaiContainer.appendChild(sprite);
+      }
+    }
+  </script>
+</body>
+</html>

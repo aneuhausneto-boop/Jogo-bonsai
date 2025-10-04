@@ -1,2 +1,0 @@
-# Jogo-bonsai
-Sem descrição
